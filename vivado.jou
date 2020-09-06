@@ -1,0 +1,591 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Sep  4 13:54:02 2020
+# Process ID: 17164
+# Current directory: F:/Documents/Uni/CSSE4010/prac3/project_3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1988 F:\Documents\Uni\CSSE4010\prac3\project_3\project_3.xpr
+# Log file: F:/Documents/Uni/CSSE4010/prac3/project_3/vivado.log
+# Journal file: F:/Documents/Uni/CSSE4010/prac3/project_3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/4bit_adder_in.vhd] -no_script -reset -force -quiet
+remove_files  F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/4bit_adder_in.vhd
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/qwertycrap.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/qwertycrap.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/qwertycrap.vhd] -no_script -reset -force -quiet
+remove_files  F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/qwertycrap.vhd
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/bcd_adder_first.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/bcd_adder_first.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_bcd_adder_first.vhd w ]
+add_files -fileset sim_1 F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_bcd_adder_first.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top test_bcd_adder_first [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source test_bcd_adder_first.tcl
+restart
+run 250 ps
+close_sim
+launch_simulation
+source test_bcd_adder_first.tcl
+restart
+run 250 ps
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/bcd_corrector.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/bcd_corrector.vhd
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top bcd_corrector [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/1bit_bcd_adder.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/1bit_bcd_adder.vhd
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/1bit_bcd_adder.vhd] -no_script -reset -force -quiet
+remove_files  F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/1bit_bcd_adder.vhd
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/onebit_bcdadd.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/onebit_bcdadd.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_onebit_bcdadd.vhd w ]
+add_files -fileset sim_1 F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_onebit_bcdadd.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top test_onebit_bcdadd [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top onebit_bcdadd [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+relaunch_sim
+restart
+run 250 ps
+launch_simulation
+close_sim
+launch_simulation
+source test_onebit_bcdadd.tcl
+set_property -name {xsim.simulate.runtime} -value {1ns} -objects [get_filesets sim_1]
+restart
+run 250 ps
+close_sim
+launch_simulation
+source test_onebit_bcdadd.tcl
+close_sim
+launch_simulation
+source test_onebit_bcdadd.tcl
+add_bp {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_onebit_bcdadd.vhd} 77
+close_sim
+launch_simulation
+source test_onebit_bcdadd.tcl
+close_sim
+launch_simulation
+source test_onebit_bcdadd.tcl
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+relaunch_sim
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+step
+step
+step
+step
+step
+relaunch_sim
+run 250 ps
+run 250 ps
+relaunch_sim
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+run 250 ps
+step
+step
+step
+step
+step
+close_sim
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/twodigit_bcdadd.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/twodigit_bcdadd.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_twodigit_bcdadd.vhd w ]
+add_files -fileset sim_1 F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_twodigit_bcdadd.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top test_twodigit_bcdadd [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source test_twodigit_bcdadd.tcl
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/mux_16bit.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/mux_16bit.vhd
+update_compile_order -fileset sources_1
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/nor_16bit.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/nor_16bit.vhd
+update_compile_order -fileset sources_1
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/xor_1bit.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/xor_1bit.vhd
+update_compile_order -fileset sources_1
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/and_1bit.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/and_1bit.vhd
+update_compile_order -fileset sources_1
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/adder_16bit_sat.vhd w ]
+add_files F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sources_1/new/adder_16bit_sat.vhd
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd w ]
+add_files -fileset sim_1 F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top test_adder_16bit_sat [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 1073676289 ps
+restart
+run 100 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 100 ps
+restart
+run 100 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 5 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 5 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 5 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 20 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 20 ps
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+restart
+run 8 ps
+relaunch_sim
+restart
+run 40 ps
+relaunch_sim
+add_bp {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd} 111
+relaunch_sim
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+relaunch_sim
+step
+step
+relaunch_sim
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+relaunch_sim
+step
+step
+step
+step
+step
+step
+remove_bps -file {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd} -line 111
+add_bp {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd} 112
+relaunch_sim
+remove_bps -file {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd} -line 112
+add_bp {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd} 111
+relaunch_sim
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+relaunch_sim
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+close_sim
+launch_simulation
+source test_adder_16bit_sat.tcl
+remove_bps -file {F:/Documents/Uni/CSSE4010/prac3/project_3/project_3.srcs/sim_1/new/test_adder_16bit_sat.vhd} -line 111
+relaunch_sim
+restart
+run 40 ps
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top adder_16bit_sat [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+open_run impl_1
+write_schematic F:/Documents/Uni/CSSE4010/prac3/project_3/schematic.sch
+report_utilization -name utilization_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top test_twodigit_bcdadd [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source test_twodigit_bcdadd.tcl
+restart
+run 50625 ps
+close_sim
+launch_simulation
+source test_twodigit_bcdadd.tcl
+restart
+run 50625 ps
+relaunch_sim
+restart
+run 10000 ps
+close_sim
+launch_simulation
+source test_twodigit_bcdadd.tcl
+restart
+run 10000 ps
+relaunch_sim
+restart
+run 10000 ps
+relaunch_sim
+run 14641 ps
+close_sim
+launch_simulation
+source test_twodigit_bcdadd.tcl
+run 14641 ps
+restart
+run 14641 ps
+close_sim
+launch_simulation
+launch_simulation
+source test_twodigit_bcdadd.tcl
+run 14641 ps
+restart
+run 14641 ps

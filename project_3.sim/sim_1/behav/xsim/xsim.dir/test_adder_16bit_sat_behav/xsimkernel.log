@@ -1,0 +1,7 @@
+Running: xsim.dir/test_adder_16bit_sat_behav/xsimk.exe -simmode gui -wdb test_adder_16bit_sat_behav.wdb -simrunnum 0 -socket 60768
+Design successfully loaded
+Design Loading Memory Usage: 5344 KB (Peak: 5344 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 5916 KB (Peak: 5916 KB)
+Simulation CPU Usage: 15 ms

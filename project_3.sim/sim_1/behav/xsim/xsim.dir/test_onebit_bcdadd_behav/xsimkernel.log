@@ -1,0 +1,7 @@
+Running: xsim.dir/test_onebit_bcdadd_behav/xsimk.exe -simmode gui -wdb test_onebit_bcdadd_behav.wdb -simrunnum 0 -socket 55941
+Design successfully loaded
+Design Loading Memory Usage: 5304 KB (Peak: 5304 KB)
+Design Loading CPU Usage: 61 ms
+Simulation completed
+Simulation Memory Usage: 5912 KB (Peak: 5912 KB)
+Simulation CPU Usage: 202 ms

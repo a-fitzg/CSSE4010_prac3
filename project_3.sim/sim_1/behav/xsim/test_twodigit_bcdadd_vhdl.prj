@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_3.srcs/sources_1/new/onebit_bcdadd.vhd" \
+"../../../../project_3.srcs/sources_1/new/twodigit_bcdadd.vhd" \
+"../../../../project_3.srcs/sim_1/new/test_twodigit_bcdadd.vhd" \
+
+# Do not sort compile order
+nosort
