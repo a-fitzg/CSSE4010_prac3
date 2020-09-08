@@ -39,7 +39,6 @@ entity onebit_bcdadd is
            B      : in STD_LOGIC_VECTOR (3 downto 0);
            Cin    : in STD_LOGIC;
            Cout   : out STD_LOGIC;
-           ERRin  : in STD_LOGIC;
            ERRout : out STD_LOGIC;
            S      : out STD_LOGIC_VECTOR (3 downto 0));
 end onebit_bcdadd;
@@ -56,13 +55,13 @@ architecture Behavioral of onebit_bcdadd is
 
 begin
 
-    process(A, B, Cin, ERRin)
+    process(A, B, Cin)
     
     -- We need a vector with one extra bit in MSB for "carry out" checking
     variable S_temp : STD_LOGIC_VECTOR(4 downto 0);
 
     begin
-        if (A > 9 or B > 9 or ERRin = '1') then
+        if (A > 9 or B > 9) then
             -- Invalid digits going on somewhere, display all 0's
             Cout <= '0';
             S <= x"0";
@@ -70,7 +69,7 @@ begin
         else    
             -- Prepend 0 to A, B, and carry in, turn them into 5-bit numbers to prevent undetected overflow
             S_temp := ('0' & a) + ('0' & b) + ("0000" & Cin);
-            ERRout <= 'L';
+            ERRout <= '0';
 
             if(S_temp > 9) then
                 Cout <= '1';

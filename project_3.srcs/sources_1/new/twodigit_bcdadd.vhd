@@ -46,45 +46,80 @@ architecture Behavioral of twodigit_bcdadd is
 
     signal internal_carry0 : STD_LOGIC;
     signal internal_carry1 : STD_LOGIC;
-    signal error_bus       : STD_LOGIC;
+    signal internal_digit0 : STD_LOGIC_VECTOR (3 downto 0);
+    signal internal_digit1 : STD_LOGIC_VECTOR (3 downto 0);
+    signal internal_digit2 : STD_LOGIC_VECTOR (3 downto 0);
+    signal errors          : STD_LOGIC_VECTOR (1 downto 0);
+    signal error           : STD_LOGIC;
     
     component onebit_bcdadd Port ( 
-           A      : in STD_LOGIC_VECTOR (3 downto 0);
-           B      : in STD_LOGIC_VECTOR (3 downto 0);
-           Cin    : in STD_LOGIC;
+           A      : in  STD_LOGIC_VECTOR (3 downto 0);
+           B      : in  STD_LOGIC_VECTOR (3 downto 0);
+           Cin    : in  STD_LOGIC;
            Cout   : out STD_LOGIC;
-           ERRin  : in STD_LOGIC;
            ERRout : out STD_LOGIC;
            S      : out STD_LOGIC_VECTOR (3 downto 0));
     end component;
 
+    component mux_3digit is Port ( 
+           A0 : in  STD_LOGIC_VECTOR (3 downto 0);
+           A1 : in  STD_LOGIC_VECTOR (3 downto 0);
+           A2 : in  STD_LOGIC_VECTOR (3 downto 0);
+           B0 : in  STD_LOGIC_VECTOR (3 downto 0);
+           B1 : in  STD_LOGIC_VECTOR (3 downto 0);
+           B2 : in  STD_LOGIC_VECTOR (3 downto 0);
+           S  : in  STD_LOGIC;
+           X0 : out STD_LOGIC_VECTOR (3 downto 0);
+           X1 : out STD_LOGIC_VECTOR (3 downto 0);
+           X2 : out STD_LOGIC_VECTOR (3 downto 0));
+    end component;
+
+    component or_1bit Port ( 
+           A : in STD_LOGIC_VECTOR (1 downto 0);
+           S : out STD_LOGIC);
+    end component;
+
 begin
 
-    u0 : onebit_bcdadd port map (
+    add0 : onebit_bcdadd port map (
         A      => A0,
         B      => B0,
         Cin    => Cin,
         Cout   => internal_carry0,
-        ERRin  => error_bus,
-        ERRout => error_bus,
-        S      => S0);
+        ERRout => errors(0),
+        S      => internal_digit0);
 
-    u1 : onebit_bcdadd port map (
+    add1 : onebit_bcdadd port map (
         A      => A1,
         B      => B1,
         Cin    => internal_carry0,
         Cout   => internal_carry1,
-        ERRin  => error_bus,
-        ERRout => error_bus,
-        S      => S1);
+        ERRout => errors(1),
+        S      => internal_digit1);
     
-    u2 : onebit_bcdadd port map (
+    add2 : onebit_bcdadd port map (
         A      => x"0",
         B      => x"0",
         Cin    => internal_carry1,
         Cout   => open,
-        ERRin  => error_bus,
-        ERRout => error_bus,
-        S      => S2);
+        ERRout => open,
+        S      => internal_digit2);
+
+    err_check : or_1bit port map (
+        A(0)   => errors(0),
+        A(1)   => errors(1),
+        S      => error);
+
+    output_mux : mux_3digit port map (
+        A0 => internal_digit0,
+        A1 => internal_digit1,
+        A2 => internal_digit2,
+        B0 => x"0",
+        B1 => x"0",
+        B2 => x"0",
+        S  => error,
+        X0 => S0,
+        X1 => S1,
+        X2 => S2);
 
 end Behavioral;
